@@ -9,3 +9,14 @@ See [here](https://docs.google.com/presentation/d/1E2hq97nSFSaDG1SsOIY46O3nBSzaP
 |7/23-7/29 | Day 11   | Day 12 | Day 13 | Day 14 |  |  |  |
 
 ## Day 1
+Introduce technology stack:
+  - Parse Server back end
+  - Android front end
+
+## Day 2
+Begin Android development.
+
+### Objective
+Scrolling weather app that fetches data from an API.
+
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/day2_weather-app-with-scrollview.gif)
