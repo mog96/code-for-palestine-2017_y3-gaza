@@ -30,6 +30,11 @@ Cover **Git** usage, before having students pull Day 3 exercise files.
 Leave 'Push' for when we start projects.
 
 Learn about the RecyclerView.
+- RecyclerView allows us to scroll through views in list form
+- RecyclerView goes hand in hand with an Adapter
+- Adapter manages the list of views being scrolled by wrapping each view in an AdapterViewHolder
+- AdapterViewHolder is a wrapper around a view in the list
+- AdapterViewHolder controls the layout components inside the view, and handles things like clicks on the view
 
 ### Objective
 Replace ScrollView and TextView with RecyclerView and ViewHolders for each forecast item. (47 TODO items)
