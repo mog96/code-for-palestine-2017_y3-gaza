@@ -22,6 +22,13 @@ Scrolling weather app that fetches data from an API.
 ![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/day2_weather-app-with-scrollview.gif)
 
 ## Day 3
+Cover **Git** usage, before having students pull Day 3 exercise files.
+- Clone
+- Check out branch
+- Commit
+- Pull
+Leave 'Push' for when we start projects.
+
 Learn about the RecyclerView.
 
 ### Objective
