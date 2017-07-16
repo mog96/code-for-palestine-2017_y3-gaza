@@ -59,3 +59,5 @@ Replace ScrollView and TextView with RecyclerView and ViewHolders for each forec
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
+
+Screen GIFs made using [licecap](https://www.cockos.com/licecap/).
