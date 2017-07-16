@@ -13,11 +13,13 @@ Introduce technology stack:
   - Parse Server back end
   - Android front end
 
+Install Android Studio. (Could take a lifetime on the connection here.)
+
 ## Day 2
-Begin Android development.
+Introduce Java. Begin Android development.
 
 ### Objective
-Scrolling weather app that fetches data from an API.
+Scrolling weather app that fetches data from an API, and displays it in a scrollable TextView.
 
 ![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/day2_weather-app-with-scrollview.gif)
 
@@ -29,6 +31,20 @@ Cover **Git** usage, before having students pull Day 3 exercise files.
 - Pull
 Leave 'Push' for when we start projects.
 
+### Objective
+Finish yesterday's objective.
+
+## Day 4
+Learn about Intents and multiple activities in an Android app.
+
+### Objective
+Add forecast detail activity to the weather app, shown when a user taps a forecast in the main activity.
+
+Add sharing of forecast text from detail activity.
+
+Add opening map from main activity. (Future version of the weather app will support weather map...?)
+
+## Day 5
 Learn about the RecyclerView.
 - RecyclerView allows us to scroll through views in list form
 - RecyclerView goes hand in hand with an Adapter
@@ -38,3 +54,6 @@ Learn about the RecyclerView.
 
 ### Objective
 Replace ScrollView and TextView with RecyclerView and ViewHolders for each forecast item. (47 TODO items)
+
+# Sources
+Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
