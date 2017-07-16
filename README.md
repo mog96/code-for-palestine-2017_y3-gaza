@@ -21,7 +21,7 @@ Introduce Java. Begin Android development.
 ### Objective
 Scrolling weather app that fetches data from an API, and displays it in a scrollable TextView.
 
-![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/day2_weather-app-with-scrollview.gif)
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson02_weather-app-with-scrollview.gif)
 
 ## Day 3
 Cover **Git** usage, before having students pull Day 3 exercise files.
@@ -43,6 +43,8 @@ Add forecast detail activity to the weather app, shown when a user taps a foreca
 Add sharing of forecast text from detail activity.
 
 Add opening map from main activity. (Future version of the weather app will support weather map...?)
+
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson03_weather-app-with-detail-map-share.gif)
 
 ## Day 5
 Learn about the RecyclerView.
