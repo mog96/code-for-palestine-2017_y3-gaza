@@ -18,8 +18,8 @@ Install Android Studio. (Could take a lifetime on the connection here.)
 ## Day 2
 Introduce Java. Begin Android development.
 
-### Objective
-Scrolling weather app that fetches data from an API, and displays it in a scrollable TextView.
+### Exercise
+Build a weather app that fetches data from an API, and displays it in a scrollable TextView.
 
 ![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson02_weather-app-with-scrollview.gif)
 
@@ -31,22 +31,12 @@ Cover **Git** usage, before having students pull Day 3 exercise files.
 - Pull
 Leave 'Push' for when we start projects.
 
-### Objective
-Finish yesterday's objective.
+### Exercise
+Finish yesterday's exercise.
 
 ## Day 4
 Learn about Intents and multiple activities in an Android app.
 
-### Objective
-Add forecast detail activity to the weather app, shown when a user taps a forecast in the main activity.
-
-Add sharing of forecast text from detail activity.
-
-Add opening map from main activity. (Future version of the weather app will support weather map...?)
-
-![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson03_weather-app-with-detail-map-share.gif)
-
-## Day 5
 Learn about the RecyclerView.
 - RecyclerView allows us to scroll through views in list form
 - RecyclerView goes hand in hand with an Adapter
@@ -54,8 +44,22 @@ Learn about the RecyclerView.
 - AdapterViewHolder is a wrapper around a view in the list
 - AdapterViewHolder controls the layout components inside the view, and handles things like clicks on the view
 
-### Objective
-Replace ScrollView and TextView with RecyclerView and ViewHolders for each forecast item. (47 TODO items)
+### Exercise
+Add forecast detail activity to the weather app, shown when a user taps a forecast in the main activity.
+
+Add ability to share forecast text from detail activity.
+
+Add ability to open map from main activity. (Future version of the weather app will support weather map...?)
+
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson03_weather-app-with-detail-map-share.gif)
+
+## Day 5
+Introduction to Android UI elements.
+
+### Exercise
+Try adding different UI elements to a layout.
+
+Experiment with tweaking UI of previous exercises.
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
