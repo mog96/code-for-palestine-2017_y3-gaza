@@ -56,10 +56,16 @@ Add ability to open map from main activity. (Future version of the weather app w
 ## Day 5
 Introduction to Android UI elements.
 
-### Exercise
-Try adding different UI elements to a layout.
+Introduction to Android layouts: [video](https://youtu.be/8agCiQzDZys?t=1m18s).
 
-Experiment with tweaking UI of previous exercises.
+### Exercises
+#### Morning Session (3.5 hrs)
+Start a new project and try adding different UI elements to a layout. Experiment with tweaking UI of previous exercises.
+
+Start a new project and add a new activity from scratch. Add the ability to take text entered in an EditText in the main Activity and pass it via an Intent to a child Activity to be displayed.
+
+#### Afternoon Session (1.5 hrs)
+Start boarding pass app, a.k.a. LayoutMania.
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
