@@ -16,10 +16,10 @@ Introduce technology stack:
 Install Android Studio. (Could take a lifetime on the connection here.)
 
 ## Day 2
-Introduce Java. Begin Android development.
+Introduce Java. Begin Android development ([Lesson 1](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson01-ScrollView-Demo)).
 
 ### Exercise
-Build a weather app that fetches data from an API, and displays it in a scrollable TextView.
+Build a weather app that fetches data from an API, and displays it in a scrollable TextView ([Lesson 2](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson02-Weather-App-Using-ScrollView)).
 
 ![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson02_weather-app-with-scrollview.gif)
 
@@ -32,12 +32,12 @@ Cover **Git** usage, before having students pull Day 3 exercise files.
 Leave 'Push' for when we start projects.
 
 ### Exercise
-Finish yesterday's exercise.
+Finish yesterday's exercise ([Lesson 2](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson02-Weather-App-Using-ScrollView)).
 
 ## Day 4
 Learn about Intents and multiple activities in an Android app.
 
-Learn about the RecyclerView.
+Learn about the RecyclerView ([Lesson 4](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson04-Weather-App-Using-RecyclerView), for demonstration only).
 - RecyclerView allows us to scroll through views in list form
 - RecyclerView goes hand in hand with an Adapter
 - Adapter manages the list of views being scrolled by wrapping each view in an AdapterViewHolder
@@ -45,7 +45,7 @@ Learn about the RecyclerView.
 - AdapterViewHolder controls the layout components inside the view, and handles things like clicks on the view
 
 ### Exercise
-Add forecast detail activity to the weather app, shown when a user taps a forecast in the main activity.
+Add forecast detail activity to the weather app, shown when a user taps a forecast in the main activity ([Lesson 3](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson03-Weather-App-With-Detail-Activity)).
 
 Add ability to share forecast text from detail activity.
 
@@ -65,7 +65,13 @@ Start a new project and try adding different UI elements to a layout. Experiment
 Start a new project and add a new activity from scratch. Add the ability to take text entered in an EditText in the main Activity and pass it via an Intent to a child Activity to be displayed.
 
 #### Afternoon Session (1.5 hrs)
-Start boarding pass app, a.k.a. LayoutMania.
+Start boarding pass app, a.k.a. LayoutMania ([Lesson 5](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson05-Boarding-Pass-App-With-ConstraintLayout)).
+
+## Day 6
+Mastering ConstraintLayout.
+
+### Exercise
+Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson05-Boarding-Pass-App-With-ConstraintLayout)).
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
