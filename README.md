@@ -76,6 +76,8 @@ Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for
 ## Day 7
 Learn to use data binding to bring a layout to life.
 
+Begin layout of students' apps.
+
 ### Exercises
 Add data binding to the passport app to populate it with flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
 
