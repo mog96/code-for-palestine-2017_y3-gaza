@@ -4,7 +4,7 @@ See [here](https://docs.google.com/presentation/d/1E2hq97nSFSaDG1SsOIY46O3nBSzaP
 # Calendar
 |          | S      | M      | T      | W      | Th     | F      | S      |
 |----------|--------|--------|--------|--------|--------|--------|--------|
-|7/9-7/15  |        |        |        |        |        | Day 1  | Day 2  |
+|7/9-7/15  |        |        |        |        |        | [Day 1](#day-1)  | Day 2  |
 |7/16-7/22 | Day 3  | Day 4  | Day 5  | Day 6  | Day 7  | Day 8  | Day 9  |
 |7/23-7/29 | Day 10 | Day 11 | Day 12 | Day 13 |        |        |        |
 
