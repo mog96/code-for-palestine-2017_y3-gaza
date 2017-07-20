@@ -78,7 +78,7 @@ Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for
 ## Day 7
 Learn to use data binding to populate views with data.
 
-Begin layout of students' apps.
+Begin work on students' final projects, starting with layout.
 
 ### Exercises
 Complete the boarding pass app. Use data binding to populate flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
