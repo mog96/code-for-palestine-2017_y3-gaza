@@ -67,6 +67,8 @@ Start a new project and add a new activity from scratch. Add the ability to take
 #### Afternoon Session (1.5 hrs)
 Start boarding pass app, a.k.a. LayoutMania ([Lesson 5](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson05-Boarding-Pass-App-With-ConstraintLayout)).
 
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson05_boarding-pass-app-with-constraintlayout.gif)
+
 ## Day 6
 Master the ConstraintLayout.
 
@@ -74,12 +76,14 @@ Master the ConstraintLayout.
 Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson05-Boarding-Pass-App-With-ConstraintLayout)).
 
 ## Day 7
-Learn to use data binding to bring a layout to life.
+Learn to use data binding to populate views with data.
 
 Begin layout of students' apps.
 
 ### Exercises
-Add data binding to the passport app to populate it with flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
+Complete the boarding pass app. Use data binding to populate flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
+
+![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson06_boarding-pass-app-with-data-binding.gif)
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
