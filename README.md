@@ -80,10 +80,16 @@ Learn to use data binding to populate views with data.
 
 Begin work on students' final projects, starting with layout.
 
-### Exercises
+### Exercise
 Complete the boarding pass app. Use data binding to populate flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
 
 ![GIF](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/GIFs/lesson06_boarding-pass-app-with-data-binding.gif)
+
+## Day 8
+Set up Parse Server and integrate with Android.
+
+### Exercise
+Follow this setup guide: [Integrating Parse Server with Android](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/PARSE_SETUP.md).
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
