@@ -441,6 +441,4 @@ Next steps:
 - Check out this [example app](https://github.com/mog96/kontax) for guidance on retrieving and displaying objects stored in Parse Server.
 
 # Sources
-### Codepath
-- [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
-- [Building Data-Driven Apps with Parse](https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse)
+CodePath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server), [Building Data-Driven Apps with Parse](https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse)
