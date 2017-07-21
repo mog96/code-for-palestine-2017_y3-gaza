@@ -432,6 +432,7 @@ Nice work! You now have an Android app connected to your Parse Server.
 
 # 30.
 Next steps:
+- Check out this [example app](https://github.com/mog96/kontax) for guidance on retrieving and displaying objects stored in Parse Server.
 
 # Sources
 ### Codepath
