@@ -186,7 +186,7 @@ SERVER_URL:   http://yourappname.herokuapp.com/parse
 ```
 
 ## 23.
-Test that your server setup is working by storing an object in your database. Paste the following at the command line, with **`myAppId` and `yourappname` replaced with your server's values**:
+Test that your server setup is working by storing an object in your database. Paste the following at the command line. Replace **`myAppId` and `yourappname` with your server's values**:
 ```
 curl -X POST -H "X-Parse-Application-Id: myAppId" \
 -H "Content-Type: application/json" \
