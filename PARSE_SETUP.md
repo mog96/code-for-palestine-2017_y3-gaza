@@ -392,7 +392,7 @@ In Android Studio, open the Android Monitor, which should have its own tab at th
 07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: --> POST https://yourappname.herokuapp.com/parse/classes/TestObject http/1.1
 07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: Content-Type: application/json
 07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: Content-Length: 13
-07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: X-Parse-Application-Id: xxktontaxxx
+07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: X-Parse-Application-Id: yourappid
 07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-Client-Version: a1.15.1
 07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-App-Build-Version: 1
 07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-App-Display-Version: 1.0
