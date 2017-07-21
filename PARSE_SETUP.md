@@ -16,13 +16,14 @@ Clone the Parse Server [example project](https://github.com/parse-community/pars
 ```
 $ git clone https://github.com/parse-community/parse-server-example.git
 ```
+**Note:** The `$` indicates that this is a command for your command line. Don't include the `$` with the command.
 
 ## 6.
 Create an **empty** repository for your server on [GitHub](https://github.com/). Give it the same name as your Heroku app. *Do not* initialize it with a README.
 
 ## 7.
 Rename the `parse-server-example` directory to the name of your GitHub repository:
-```bash
+```
 $ mv parse-server-example name-of-your-github-repo
 ```
 
