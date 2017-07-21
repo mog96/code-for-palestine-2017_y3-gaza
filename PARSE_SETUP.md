@@ -61,7 +61,7 @@ $ git push
 ```
 
 ## 12.
-You should already have the Heroku CLI installed from [Step 3](#3). We are now going to deploy your app to Heroku. First log in to Heroku with this command:
+You should already have the Heroku CLI installed from [Step 3](#3). You are now going to deploy your app to Heroku. First log in to Heroku with this command:
   ```
   $ heroku login 
   ```
@@ -96,13 +96,13 @@ To https://git.heroku.com/name-of-your-github-repo.git
 Nice work! You now have a server running on Heroku.
 
 ## 15.
-Next we need to connect it to a database. Create an [mLab](https://mlab.com/) account.
+Next you need to connect it to a database. Create an [mLab](https://mlab.com/) account.
 
 ## 16.
 Next create a [new database](https://mlab.com/create/wizard). Select 'Amazon Web Services' as the 'Cloud Provider', and select 'Sandbox' as the 'Plan Type'. Then click 'Contiinue'. Choose 'EU (Ireland)' as the 'AWS Region'. Then click 'Continue'. Enter a name for your database. (Developers sometimes like to name their databases after people.) Click 'Continue'. Confirm all the details about your database, and then click 'Submit Order'.
 
 ## 17.
-Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*. Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. We will need this username and password in Step 20. Click 'Create'.
+Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*. Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. You will need this username and password in Step 20. Click 'Create'.
 
 You should now have a database user with 'READ ONLY?' set to 'false'.
 
@@ -115,7 +115,7 @@ Go to the directory containing your server, and open the `index.js` file. This f
 ## 20.
 As you might have noticed, the MongoDB URI that you copied has a section `<dbuser>:<dbpassword>`, which you need to fill in with your the username and password of the user you added to your database. This is *sensitive information* and should be seen by nobody except you. Therefore, you *do not* want to leave it in your `index.js` file, especially given that this file is visible on GitHub.
 
-To solve this issue, we will set the URI as a 'config var' on Heroku. This will allow Heroku to add the URI to your index.js file when your server is first initialized. To give you an idea of how this works, take a look at the following line near the top of your `index.js` file:
+To solve this issue, you will set the URI as a 'config var' on Heroku. This will allow Heroku to add the URI to your index.js file when your server is first initialized. To give you an idea of how this works, take a look at the following line near the top of your `index.js` file:
 ```
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 ```
@@ -123,7 +123,7 @@ You can see here that the `databaseUri` is being set using a value stored in the
 
 To set the `DATABASE_URI` config var in Heroku, go to the command line on your computer and run the following command:
 ```
-$ heroku config:set DATABASE_URI=your_mongodb_uri_with_username_and_password_replaced
+$ heroku config:set DATABASE_URI=mongodb://your_mongodb_uri_with_username_and_password_replaced
 ```
 Be sure to replace the `<dbuser>:<dbpassword>` section of the URI with the username and password of the *user you added to your database* (not your mLab account username and password). Remove the `<` and `>` characters as well.
 
@@ -136,17 +136,25 @@ Nice work! Your server is now connected to your database.
 ## 21.
 Go back to your `index.js` file. Take a look at this section:
 ```javascript
-var api = new ParseServer ({
-  databaseURI: databaseUri,
-  ...
-
+var api = new ParseServer({
+  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+  appId: process.env.APP_ID || 'myAppId',
+  masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  liveQuery: {
+    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  }
 });
 ```
-You can here that a new `ParseServer` object is created, representing your server. It takes in the database URI that we set above, as well as several other fields set using the same `process.env.CONFIG_VAR` scheme as our database URI. In order for our server to run correctly we need to set the following config vars at minimum:
+You can here that a new `ParseServer` object is created, representing your server. It takes in the database URI that you set above, as well as several other fields that are each set using the same `process.env.CONFIG_VAR` that we used to set the `databaseUri` var in [Step 20](#20).
+
+In order for your server to run correctly you will need to set the following config vars at minimum:
 - `APP_ID`
 - `MASTER_KEY`
 - `PARSE_MOUNT`
 - `SERVER_URL`
+You can use the same `heroku config:set` command as in the previous step.
 
 The `APP_ID` and `MASTER_KEY` can be set to any combination of letters, numbers, and special characters that you like. Treat the `APP_ID` as a username, and the `MASTER_KEY` as a password.
 
@@ -154,7 +162,6 @@ The `PARSE_MOUNT` should be set to `/parse`.
 
 The `SERVER_URL` should be set to `http://yourappname.herokuapp.com/parse`. Note that the end of the server URL matches the `PARSE_MOUNT` above.
 
-Set the config vars using the same `heroku config:set` command as before:
 ```
 $ heroku config:set APP_ID=your_app_id
 $ heroku config:set MASTER_KEY=your_master_key
@@ -170,11 +177,12 @@ $ heroku config
 
 Make sure each of the following config vars appear:
 ```
-APP_ID
-DATABASE_URI
-MASTER_KEY
-PARSE_MOUNT
-SERVER_URL
+=== yourappname Config Vars
+APP_ID:       your_app_id
+DATABASE_URI: mongodb://your_mongodb_uri_with_username_and_password_replaced
+MASTER_KEY:   your_master_key
+PARSE_MOUNT:  /parse
+SERVER_URL:   http://yourappname.herokuapp.com/parse
 ```
 
 ## 23.
@@ -418,9 +426,12 @@ In Android Studio, open the Android Monitor, which should have its own tab at th
 07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: {"objectId":"bMQLf0CVqm","createdAt":"2017-07-21T08:54:31.818Z"}
 07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: <-- END HTTP (64-byte body)
 ```
-These are from the `OkHttp` logger we set up in [Step 26](#26), before we initializing Parse. These logs will be useful when you are debugging later on.
+These are from the `OkHttp` logger you set up in [Step 26](#26), before initializing Parse. These logs will be useful when you are debugging later on.
 
 Nice work! You now have an Android app connected to your Parse Server.
+
+# 30.
+Next steps:
 
 # Sources
 ### Codepath
