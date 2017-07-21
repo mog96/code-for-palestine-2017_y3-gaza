@@ -102,9 +102,7 @@ Next we need to connect it to a database. Create an [mLab](https://mlab.com/) ac
 Next create a [new database](https://mlab.com/create/wizard). Select 'Amazon Web Services' as the 'Cloud Provider', and select 'Sandbox' as the 'Plan Type'. Then click 'Contiinue'. Choose 'EU (Ireland)' as the 'AWS Region'. Then click 'Continue'. Enter a name for your database. (Developers sometimes like to name their databases after people.) Click 'Continue'. Confirm all the details about your database, and then click 'Submit Order'.
 
 ## 17.
-Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*.
-
-Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. We will need this username and password in Step 20. Click 'Create'.
+Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*. Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. We will need this username and password in Step 20. Click 'Create'.
 
 You should now have a database user with 'READ ONLY?' set to 'false'.
 
@@ -254,13 +252,86 @@ public class ParseApplication extends Application {
         builder.networkInterceptors().add(httpLoggingInterceptor);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("myAppId") // TODO: replace with your app ID.
+                .applicationId("myAppId") // TODO: Replace with your app ID.
                 .clientKey(null)
                 .clientBuilder(builder)
-                .server("https://my-parse-app-url.herokuapp.com/parse/").build()); // TODO: replace with your app URL.
+                .server("https://my-parse-app-url.herokuapp.com/parse/").build()); // TODO: Replace with your app URL.
     }
 }
 ```
+
+## 27.
+Next you need to tell Android to instantiate your above `ParseApplication` class when your app is initialized. Go to `AndroidManifest.xml`
+and add the following attribute `<application>` tag:
+```xml
+android:name=".ParseApplication"
+```
+
+Your `AndroidManifest.xml` should now look something like this:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.your.app.name">
+
+    <application
+        android:name=".ParseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+## 28.
+Next you need to add two permissions to enable Parse. Add the following two lines:
+```
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+Such that your `AndroidManifest.xml` looks like this:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mog.kontax.kontax">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".ParseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+## 29.
+
+
 
 # Sources
 Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
