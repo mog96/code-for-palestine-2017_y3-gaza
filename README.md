@@ -88,8 +88,20 @@ Complete the boarding pass app. Use data binding to populate flight information 
 ## Day 8
 Set up Parse Server and integrate with Android.
 
+Continue working on layout and button-triggered transitions between screens.
+
 ### Exercise
 Follow this setup guide: [Integrating Parse Server with Android](https://github.com/mog96/code-for-palestine-2017_y3-gaza/blob/master/PARSE_SETUP.md).
+
+## Day 9
+Upload all groups' Android Studio projects to GitHub. Review pushing, pulling, merging to ensure that teammates feel comfortable working on their group's Android Studio project in parallel.
+
+Finish unpolished layout.
+
+Begin storing and retrieving data to and from Parse Server.
+
+### Exercise
+Walk through storing and retrieving data to and from Parse Server.
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
