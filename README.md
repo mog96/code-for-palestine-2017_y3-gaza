@@ -5,8 +5,8 @@ See [here](https://docs.google.com/presentation/d/1E2hq97nSFSaDG1SsOIY46O3nBSzaP
 |          | S      | M      | T      | W      | Th     | F      | S      |
 |----------|--------|--------|--------|--------|--------|--------|--------|
 |7/9-7/15  |        |        |        |        |        | [Day 1](#day-1)  | [Day 2](#day-2)  |
-|7/16-7/22 | [Day 3](#day-3)  | [Day 4](#day-4)  | [Day 5](#day-5)  | [Day 6](#day-6)  | [Day 7](#day-7)  | [Day 8](#day-8)  | [Day 9](#day-9)  |
-|7/23-7/29 | [Day 10](#day-10) | [Day 11](#day-11) | [Day 12](#day-12) | [Day 13](#day-13) |        |        |        |
+|7/16-7/22 | [Day 3](#day-3)  | [Day 4](#day-4)  | [Day 5](#day-5)  | [Day 6](#day-6)  | [Day 7](#day-7)  | [Day 8](#day-8) | |
+|7/23-7/29 | [Day 9](#day-9)  | [Day 10](#day-10) | [Day 11](#day-11) | [Day 12](#day-12) | [Day 13](#day-13) |        |      | 
 
 ## Day 1
 Introduce technology stack:
