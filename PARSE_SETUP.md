@@ -423,6 +423,6 @@ These are from the `OkHttp` logger we set up in [Step 26](#26), before we initia
 Nice work! You now have an Android app connected to your Parse Server.
 
 # Sources
-## Codepath
-[Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
-[Building Data-Driven Apps with Parse](https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse)
+### Codepath
+- [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
+- [Building Data-Driven Apps with Parse](https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse)
