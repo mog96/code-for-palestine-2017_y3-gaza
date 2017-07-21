@@ -227,5 +227,40 @@ compile 'com.squareup.okhttp3:logging-interceptor:3.6.0' // for logging API call
 ```
 Click 'Sync Now' when it appears.
 
+## 26.
+Next you will create a Java class to manage your app's connection to your Parse Server.
+
+Open the project navigator tab and select the folder containing your app's Java files ('app' -->  'java' --> 'com.your.app.name').
+
+Right click this folder, and select 'New' --> 'Java Class'. Enter 'ParseApplication' as the name. Leave all other fields blank and click 'OK'.
+
+Replace the `class` declaration in your new file with the following and follow all of the `TODO`s:
+```java
+public class ParseApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        // Use for troubleshooting.
+        // IMPORTANT: Remove this line for production.
+        Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
+
+        // Use for monitoring Parse OkHttp trafic.       
+        // Can be Level.BASIC, Level.HEADERS, or Level.BODY
+        // Go to http://square.github.io/okhttp/3.x/logging-interceptor/ to see the options.
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        builder.networkInterceptors().add(httpLoggingInterceptor);
+
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                .applicationId("myAppId") // TODO: replace with your app ID.
+                .clientKey(null)
+                .clientBuilder(builder)
+                .server("https://my-parse-app-url.herokuapp.com/parse/").build()); // TODO: replace with your app URL.
+    }
+}
+```
+
 # Sources
 Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
