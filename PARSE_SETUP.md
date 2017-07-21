@@ -13,51 +13,51 @@ Open the command line on your computer, and change directory to the directory wh
 
 ## 5.
 Clone the Parse Server [example project](https://github.com/parse-community/parse-server-example):
-  ```
-  $ git clone https://github.com/parse-community/parse-server-example.git
-  ```
+```
+$ git clone https://github.com/parse-community/parse-server-example.git
+```
 
 ## 6.
 Create an **empty** repository for your server on [GitHub](https://github.com/). Give it the same name as your Heroku app. *Do not* initialize it with a README.
 
 ## 7.
 Rename the `parse-server-example` directory to the name of your GitHub repository:
-  ```
-  $ mv parse-server-example name-of-your-github-repo
-  ```
+```
+$ mv parse-server-example name-of-your-github-repo
+```
 
 ## 8.
 Change directory into the repository:
-  ```
-  $ cd name-of-your-github-repo
-  ```
+```
+$ cd name-of-your-github-repo
+```
 
 ## 9.
 Check the remote url for the repository:
-  ```
-  $ git remote -v
-  origin  https://github.com/parse-community/parse-server-example.git (fetch)
-  origin  https://github.com/parse-community/parse-server-example.git (push)
-  ```
-  It currently points to the original `parse-server-example` repo.
+```
+$ git remote -v
+origin  https://github.com/parse-community/parse-server-example.git (fetch)
+origin  https://github.com/parse-community/parse-server-example.git (push)
+```
+It currently points to the original `parse-server-example` repo.
 
 ## 10.
 Change the remote url to point to your GitHub repository:
-  ```
-  $ git remote set-url origin https://github.com/your-username/name-of-your-github-repo.git
-  ```
-  Verify that this change worked. 
-  ```
-  $ git remote -v
-  origin  https://github.com/your-username/name-of-your-github-repo.git (fetch)
-  origin  https://github.com/your-username/name-of-your-github-repo.git (push)
-  ```
+```
+$ git remote set-url origin https://github.com/your-username/name-of-your-github-repo.git
+```
+Verify that this change worked. 
+```
+$ git remote -v
+origin  https://github.com/your-username/name-of-your-github-repo.git (fetch)
+origin  https://github.com/your-username/name-of-your-github-repo.git (push)
+```
 
 ## 11.
 Push your repository to GitHub:
-  ```
-  $ git push
-  ```
+```
+$ git push
+```
 
 ## 12.
 You should already have the Heroku CLI installed from Step 3. We are now going to deploy your app to Heroku. First log in to Heroku with this command:
@@ -68,31 +68,31 @@ You should already have the Heroku CLI installed from Step 3. We are now going t
 
 ## 13.
 Once you have successfully logged in, connect your server repository to Heroku with the following command:
-  ```
-  $ heroku git:remote -a your-heroku-app-name
-  ```
-  Verify that this change worked:
-  ```
-  $ git remote -v
-  heroku  https://git.heroku.com/name-of-your-github-repo.git (fetch)
-  heroku  https://git.heroku.com/name-of-your-github-repo.git (push)
-  origin  https://github.com/mog96/name-of-your-github-repo.git (fetch)
-  origin  https://github.com/mog96/name-of-your-github-repo.git (push)
-  ```
-  You should now see a remote called 'heroku' in addition to the remote called 'origin'.
+```
+$ heroku git:remote -a your-heroku-app-name
+```
+Verify that this change worked:
+```
+$ git remote -v
+heroku  https://git.heroku.com/name-of-your-github-repo.git (fetch)
+heroku  https://git.heroku.com/name-of-your-github-repo.git (push)
+origin  https://github.com/mog96/name-of-your-github-repo.git (fetch)
+origin  https://github.com/mog96/name-of-your-github-repo.git (push)
+```
+You should now see a remote called 'heroku' in addition to the remote called 'origin'.
 
 ## 14.
 Deploy your app to Heroku with the following command:
-  ```
-  $ git push heroku master
-  ```
-  You should see lots of logs prefixed with 'remote:' describing the status of the deploy. If the deploy was successful, you should see the following at the very bottom of the logs:
-  ```
-  remote: Verifying deploy... done.
-  To https://git.heroku.com/name-of-your-github-repo.git
-  * [new branch]      master -> master
-  ```
-  Nice work! You now have a server running on Heroku.
+```
+$ git push heroku master
+```
+You should see lots of logs prefixed with 'remote:' describing the status of the deploy. If the deploy was successful, you should see the following at the very bottom of the logs:
+```
+remote: Verifying deploy... done.
+To https://git.heroku.com/name-of-your-github-repo.git
+* [new branch]      master -> master
+```
+Nice work! You now have a server running on Heroku.
 
 ## 15.
 Next we need to connect it to a database. Create an [mLab](https://mlab.com/) account.
@@ -109,36 +109,68 @@ Go to the directory containing your server, and open the `index.js` file. This f
 ## 19.
 As you might have noticed, the MongoDB URI that you copied has a section `<dbuser>:<dbpassword>`, which you need to fill in with your mLab username and password. This is *sensitive information* and should be seen by nobody except you. Therefore, you *do not* want to leave it in your `index.js` file, especially given that this file is visible on GitHub.
 
-  To solve this issue, we will set the URI as a 'config var' on Heroku. This will allow Heroku to add the URI to your index.js file when your server is first initialized. To give you an idea of how this works, take a look at the following line near the top of your `index.js` file:
-  ```
-  var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
-  ```
-  You can see here that the `databaseUri` is being set using values stored in the *environment*, `process.env`, in which your server is running. First your code looks for a config var with the name `DATABASE_URI`, and if it isn't found, looks for a config var with the name `MONGODB_URI`.
+To solve this issue, we will set the URI as a 'config var' on Heroku. This will allow Heroku to add the URI to your index.js file when your server is first initialized. To give you an idea of how this works, take a look at the following line near the top of your `index.js` file:
+```
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
+```
+You can see here that the `databaseUri` is being set using values stored in the *environment*, `process.env`, in which your server is running. First your code looks for a config var with the name `DATABASE_URI`, and if it isn't found, looks for a config var with the name `MONGODB_URI`.
 
-  To set the `DATABASE_URI` config var in Heroku, go to the command line on your computer and run the following command:
-  ```
-  $ heroku config:set DATABASE_URI=your_mongodb_uri_with_username_and_password_replaced
-  ```
-  Be sure to replace the `<dbuser>:<dbpassword>` section of your MongoDB URI with your mLab username and password. To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
-  ```
-  $ heroku config
-  ```
-  Nice work! Your server is now connected to your database.
+To set the `DATABASE_URI` config var in Heroku, go to the command line on your computer and run the following command:
+```
+$ heroku config:set DATABASE_URI=your_mongodb_uri_with_username_and_password_replaced
+```
+Be sure to replace the `<dbuser>:<dbpassword>` section of your MongoDB URI with your mLab username and password. To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
+```
+$ heroku config
+```
+Nice work! Your server is now connected to your database.
 
 ## 20.
 Go back to your `index.js` file. Take a look at this line and the lines directly below it:
-  ```
-  var api = new ParseServer ({
-    databaseURI: databaseUri,
-    ...
+```
+var api = new ParseServer ({
+  databaseURI: databaseUri,
+  ...
 
-  });
-  ```
-  You can here that a new `ParseServer` object is created, representing your server. It takes in the database URI that we set above, as well as several other fields set using the same `process.env.CONFIG_VAR` scheme as our database URI. In order for our server to run correctly we need to set the following config vars at minimum:
-  - APP_ID
-  - MASTER_KEY
-  - PARSE_MOUNT
-  - SERVER_URL
+});
+```
+You can here that a new `ParseServer` object is created, representing your server. It takes in the database URI that we set above, as well as several other fields set using the same `process.env.CONFIG_VAR` scheme as our database URI. In order for our server to run correctly we need to set the following config vars at minimum:
+- `APP_ID`
+- `MASTER_KEY`
+- `PARSE_MOUNT`
+- `SERVER_URL`
+
+The `APP_ID` and `MASTER_KEY` can be set to any combination of letters, numbers, and special characters that you like. Treat the `APP_ID` as a username, and the `MASTER_KEY` as a password.
+
+The `PARSE_MOUNT` should be set to `/parse`.
+
+The `SERVER_URL` should be set to `http://yourappname.herokuapp.com/parse`. Note that the end of the server URL matches the `PARSE_MOUNT` above.
+
+Set the config vars using the same `heroku config:set` command as before:
+```
+$ heroku config:set APP_ID=your_app_id
+$ heroku config:set MASTER_KEY=your_master_key
+$ heroku config:set PARSE_MOUNT=/parse
+$ heroku config:set SERVER_URL=http://yourappname.herokuapp.com/parse
+```
+
+## 21.
+Verify that all your config vars are set correctly:
+```
+$ heroku config
+```
+
+Make sure each of the following config vars appear:
+```
+APP_ID
+DATABASE_URI
+MASTER_KEY
+PARSE_MOUNT
+SERVER_URL
+```
+
+## 22.
+We're now ready to connect our server to Android.
 
 # Sources
 Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
