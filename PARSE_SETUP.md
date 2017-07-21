@@ -334,4 +334,6 @@ Such that your `AndroidManifest.xml` looks like this:
 
 
 # Sources
-Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
+## Codepath
+[Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
+[Building Data-Driven Apps with Parse](https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse)
