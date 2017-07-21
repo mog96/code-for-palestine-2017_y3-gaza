@@ -61,7 +61,7 @@ $ git push
 ```
 
 ## 12.
-You should already have the Heroku CLI installed from [Step 3](#3.). We are now going to deploy your app to Heroku. First log in to Heroku with this command:
+You should already have the Heroku CLI installed from [Step 3](#3). We are now going to deploy your app to Heroku. First log in to Heroku with this command:
   ```
   $ heroku login 
   ```
@@ -217,7 +217,7 @@ It means that your server was not configured correctly. You can get more informa
 ```
 $ heroku logs
 ```
-A common error is failed MongoDB authentication. Check that the username and password for your database are exactly as you set them in [Step 17](#17.).
+A common error is failed MongoDB authentication. Check that the username and password for your database are exactly as you set them in [Step 17](#17).
 
 ## 24.
 Lastly, before moving on to Android, test that you can read data back from your server. Reading data requires the master key. Paste the following at the command line, with **`myAppId`, `abc` and `yourappname` replaced with your server's values**:
@@ -418,7 +418,7 @@ In Android Studio, open the Android Monitor, which should have its own tab at th
 07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: {"objectId":"bMQLf0CVqm","createdAt":"2017-07-21T08:54:31.818Z"}
 07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: <-- END HTTP (64-byte body)
 ```
-These are from the `OkHttp` logger we set up in [Step 26](#26.), before we initializing Parse. These logs will be useful when you are debugging later on.
+These are from the `OkHttp` logger we set up in [Step 26](#26), before we initializing Parse. These logs will be useful when you are debugging later on.
 
 Nice work! You now have an Android app connected to your Parse Server.
 
