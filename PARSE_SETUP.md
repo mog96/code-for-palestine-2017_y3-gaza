@@ -133,8 +133,8 @@ $ heroku config
 Nice work! Your server is now connected to your database.
 
 ## 21.
-Go back to your `index.js` file. Take a look at this line and the lines directly below it:
-```
+Go back to your `index.js` file. Take a look at this section:
+```javascript
 var api = new ParseServer ({
   databaseURI: databaseUri,
   ...
@@ -215,6 +215,16 @@ You should get back something like this:
 ```
 
 Nice work! You've now verified that you can both store and retrieve data using your Parse Server's [RESTful API](http://searchcloudstorage.techtarget.com/definition/RESTful-API).
+
+## 25.
+Now for integration with Android. Open your Android Studio project and add the following to the `dependencies` section of your app's `build.gradle` file:
+```
+// For Parse Server.
+compile 'com.parse.bolts:bolts-android:1.4.0'
+compile 'com.parse:parse-android:1.15.1'
+compile 'com.squareup.okhttp3:logging-interceptor:3.6.0' // for logging API calls to LogCat
+```
+Click 'Sync Now' when it appears.
 
 # Sources
 Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
