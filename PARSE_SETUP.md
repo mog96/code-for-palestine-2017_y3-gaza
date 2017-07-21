@@ -119,13 +119,15 @@ To solve this issue, we will set the URI as a 'config var' on Heroku. This will 
 ```
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 ```
-You can see here that the `databaseUri` is being set using values stored in the *environment*, `process.env`, in which your server is running. First your code looks for a config var with the name `DATABASE_URI`, and if it isn't found, looks for a config var with the name `MONGODB_URI`.
+You can see here that the `databaseUri` is being set using a value stored in the *environment* in which it is running, `process.env`, in which your server is running. First your code looks for a config var with the name `DATABASE_URI`, and if it isn't found, looks for a config var with the name `MONGODB_URI`.
 
 To set the `DATABASE_URI` config var in Heroku, go to the command line on your computer and run the following command:
 ```
 $ heroku config:set DATABASE_URI=your_mongodb_uri_with_username_and_password_replaced
 ```
-Be sure to replace the `<dbuser>:<dbpassword>` section of the URI with the username and password of the *user you added to your database* (not your mLab account username and password). To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
+Be sure to replace the `<dbuser>:<dbpassword>` section of the URI with the username and password of the *user you added to your database* (not your mLab account username and password). Remove the `<` and `>` characters as well.
+
+To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
 ```
 $ heroku config
 ```
@@ -189,7 +191,23 @@ You should get back something like this:
 ```
 {"objectId":"JzfxQjhleB","createdAt":"2017-07-21T06:14:10.512Z"}
 ```
-Indicating that the store was successful. If you go back to mLab in your browser and refresh your database page, under the `Collections` tab you should now see a collection called `GameScore`. Click on the collection to see its documents. You should see a document in JSON form that contains the same information as was included in the `curl` command above, as well as some additional fields: an ID, created-at time, and updated-at time. Nice work! You can now store documents in your server.
+Indicating that the store was successful. If you go back to mLab in your browser and refresh your database page, under the `Collections` tab you should now see a collection called `GameScore`. Click on the collection to see its documents. You should see a document in JSON form that contains the same information as was included in the `curl` command above, as well as some additional fields: an ID, created-at time, and updated-at time. It will look something like this:
+```json
+{
+    "_id": "OEf5byC3tH",
+    "score": 1337,
+    "playerName": "Sean Plott",
+    "cheatMode": false,
+    "_created_at": {
+        "$date": "2017-07-21T09:10:34.577Z"
+    },
+    "_updated_at": {
+        "$date": "2017-07-21T09:10:34.577Z"
+    }
+}
+```
+
+Nice work! You can now store documents in your server.
 
 If you got back something like this:
 ```
@@ -268,7 +286,7 @@ android:name=".ParseApplication"
 ```
 
 Your `AndroidManifest.xml` should now look something like this:
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.your.app.name">
@@ -295,13 +313,13 @@ Your `AndroidManifest.xml` should now look something like this:
 
 ## 28.
 Next you need to add two permissions to enable Parse. Add the following two lines:
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
 Such that your `AndroidManifest.xml` looks like this:
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mog.kontax.kontax">
@@ -330,8 +348,44 @@ Such that your `AndroidManifest.xml` looks like this:
 ```
 
 ## 29.
+Test that you'ce configured your app correctly by adding the following to the end of the `onCreate()` method of your `ParseApplication` class:
+```java
+// New test creation of object below
+ParseObject testObject = new ParseObject("TestObject");
+testObject.put("foo", "bar");
+testObject.saveInBackground();
+```
+Make sure these lines come *after* the call to `Parse.initialize()`. Your `onCreate()` should look something like this:
+```java
+public class ParseApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
+        // Your initialization code from above here
+        Parse.initialize(...);
 
+        // New test creation of object below
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+    }   
+}
+```
+
+Now build and run your app on an Internet-connected device. Once the app has sucessfully launched, go back to mLab in your browser and refresh your database page. Under the `Collections` tab you should now see a collection called `TestObject`. The collection should contain one document in JSON form that has a field "foo" set to the value "bar", and will look similar to this:
+```json
+{
+    "_id": "bMQLf0CVqm",
+    "foo": "bar",
+    "_created_at": {
+        "$date": "2017-07-21T08:54:31.818Z"
+    },
+    "_updated_at": {
+        "$date": "2017-07-21T08:54:31.818Z"
+    }
+}
+```
 
 # Sources
 ## Codepath
