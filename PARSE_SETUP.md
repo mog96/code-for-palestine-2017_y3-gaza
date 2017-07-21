@@ -22,7 +22,7 @@ Create an **empty** repository for your server on [GitHub](https://github.com/).
 
 ## 7.
 Rename the `parse-server-example` directory to the name of your GitHub repository:
-```
+```bash
 $ mv parse-server-example name-of-your-github-repo
 ```
 
