@@ -261,7 +261,7 @@ public class ParseApplication extends Application {
         // IMPORTANT: Remove this line for production.
         Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
 
-        // Use for monitoring Parse OkHttp trafic.       
+        // Use OkHttp for monitoring Parse trafic.       
         // Can be Level.BASIC, Level.HEADERS, or Level.BODY
         // Go to http://square.github.io/okhttp/3.x/logging-interceptor/ to see the options.
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
@@ -322,7 +322,7 @@ Such that your `AndroidManifest.xml` looks like this:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mog.kontax.kontax">
+    package="com.your.app.name">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -386,6 +386,41 @@ Now build and run your app on an Internet-connected device. Once the app has suc
     }
 }
 ```
+
+In Android Studio, open the Android Monitor, which should have its own tab at the bottom of Android Studio. (If you don't see it, go to View > Tool WIndows > Android Monitor.) You should see some logs like these, that contain the tag `D/OkHttp`:
+```
+07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: --> POST https://yourappname.herokuapp.com/parse/classes/TestObject http/1.1
+07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: Content-Type: application/json
+07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: Content-Length: 13
+07-21 11:54:31.373 2369-2404/com.your.app.name D/OkHttp: X-Parse-Application-Id: xxktontaxxx
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-Client-Version: a1.15.1
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-App-Build-Version: 1
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-App-Display-Version: 1.0
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: X-Parse-Installation-Id: d922f586-05a7-4855-b0b7-88eed1825614
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: Host: yourappname.herokuapp.com
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: Connection: Keep-Alive
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: Accept-Encoding: gzip
+07-21 11:54:31.374 2369-2404/com.your.app.name D/OkHttp: User-Agent: okhttp/3.6.0
+07-21 11:54:31.375 2369-2404/com.your.app.name D/OkHttp: {"foo":"bar"}
+07-21 11:54:31.375 2369-2404/com.your.app.name D/OkHttp: --> END POST (13-byte body)
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: <-- 201 Created https://yourappname.herokuapp.com/parse/classes/TestObject (209ms)
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Server: Cowboy
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Connection: keep-alive
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: X-Powered-By: Express
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Access-Control-Allow-Origin: *
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Access-Control-Allow-Methods: GET,PUT,POST,DELETE,OPTIONS
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Access-Control-Allow-Headers: X-Parse-Master-Key, X-Parse-REST-API-Key, X-Parse-Javascript-Key, X-Parse-Application-Id, X-Parse-Client-Version, X-Parse-Session-Token, X-Requested-With, X-Parse-Revocable-Session, Content-Type
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Location: http://yourappname.herokuapp.com/parse/classes/TestObject/bMQLf0CVqm
+07-21 11:54:31.585 2369-2404/com.your.app.name D/OkHttp: Content-Type: application/json; charset=utf-8
+07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: Content-Length: 64
+07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: Date: Fri, 21 Jul 2017 08:54:31 GMT
+07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: Via: 1.1 vegur
+07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: {"objectId":"bMQLf0CVqm","createdAt":"2017-07-21T08:54:31.818Z"}
+07-21 11:54:31.586 2369-2404/com.your.app.name D/OkHttp: <-- END HTTP (64-byte body)
+```
+These are from the `OkHttp` logger we set up in [Step 26](#26.), before we initializing Parse. These logs will be useful when you are debugging later on.
+
+Nice work! You now have an Android app connected to your Parse Server.
 
 # Sources
 ## Codepath
