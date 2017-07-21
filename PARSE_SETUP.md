@@ -99,7 +99,11 @@ Nice work! You now have a server running on Heroku.
 Next you need to connect it to a database. Create an [mLab](https://mlab.com/) account.
 
 ## 16.
-Next create a [new database](https://mlab.com/create/wizard). Select 'Amazon Web Services' as the 'Cloud Provider', and select 'Sandbox' as the 'Plan Type'. Then click 'Contiinue'. Choose 'EU (Ireland)' as the 'AWS Region'. Then click 'Continue'. Enter a name for your database. (Developers sometimes like to name their databases after people.) Click 'Continue'. Confirm all the details about your database, and then click 'Submit Order'.
+Next create a [new database](https://mlab.com/create/wizard).
+- Select 'Amazon Web Services' as the 'Cloud Provider', and select 'Sandbox' as the 'Plan Type'. Then click 'Contiinue'.
+- Choose 'EU (Ireland)' as the 'AWS Region'. Then click 'Continue'.
+- Enter a name for your database. (Developers sometimes like to name their databases after people.) Click 'Continue'.
+- Confirm all the details about your database, and then click 'Submit Order'.
 
 ## 17.
 Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*. Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. You will need this username and password in Step 20. Click 'Create'.
