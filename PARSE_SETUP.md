@@ -431,6 +431,8 @@ These are from the `OkHttp` logger you set up in [Step 26](#26), before initiali
 Nice work! You now have an Android app connected to your Parse Server.
 
 # 30.
+Give yourself a pat on the back. You've just setup your first server-connected mobile application!
+
 Next steps:
 - Check out this [example app](https://github.com/mog96/kontax) for guidance on retrieving and displaying objects stored in Parse Server.
 
