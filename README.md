@@ -1,5 +1,5 @@
 # Code for Palestine 2017 — Year 3 Course, Gaza
-Curriculum for the [Code for Palestine](http://www.pgfapps.ps/codeforpalestine/) 2017 coding summer camp, Gaza branch, Year 3 course.
+Curriculum for the [Code for Palestine](http://www.pgfapps.ps/codeforpalestine/) 2017 summer camp, Gaza branch, Year 3 course.
 
 Students have a background in web development using the Flask web server framework and experience creating web interfaces using HTML, CSS, and JavaScript.
 
