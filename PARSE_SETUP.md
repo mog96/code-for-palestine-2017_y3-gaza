@@ -60,7 +60,7 @@ $ git push
 ```
 
 ## 12.
-You should already have the Heroku CLI installed from Step 3. We are now going to deploy your app to Heroku. First log in to Heroku with this command:
+You should already have the Heroku CLI installed from [Step 3](#3.). We are now going to deploy your app to Heroku. First log in to Heroku with this command:
   ```
   $ heroku login 
   ```
@@ -101,13 +101,20 @@ Next we need to connect it to a database. Create an [mLab](https://mlab.com/) ac
 Next create a [new database](https://mlab.com/create/wizard). Select 'Amazon Web Services' as the 'Cloud Provider', and select 'Sandbox' as the 'Plan Type'. Then click 'Contiinue'. Choose 'EU (Ireland)' as the 'AWS Region'. Then click 'Continue'. Enter a name for your database. (Developers sometimes like to name their databases after people.) Click 'Continue'. Confirm all the details about your database, and then click 'Submit Order'.
 
 ## 17.
-Once the setup of your database has completed, we can get the URI of your database. Click the database name to go to its home page. At the top of the page there should be a URI with the prefix `mongodb://`. Copy the URI.
+Once the setup of your database has completed, click the database name to go to its home page. In order to enable access to your database you will need to *add a user to the database*.
+
+Click the 'Users' tab, and then click 'Add database user'. Enter a username and password. This username and password should be different from your mLab login. We will need this username and password in Step 20. Click 'Create'.
+
+You should now have a database user with 'READ ONLY?' set to 'false'.
 
 ## 18.
-Go to the directory containing your server, and open the `index.js` file. This file contains all of the configuration information for your Parse Server. **Do not** make any changes to this file just yet.
+At the top of the page there should be a URI with the prefix `mongodb://`. Copy the URI.
 
 ## 19.
-As you might have noticed, the MongoDB URI that you copied has a section `<dbuser>:<dbpassword>`, which you need to fill in with your mLab username and password. This is *sensitive information* and should be seen by nobody except you. Therefore, you *do not* want to leave it in your `index.js` file, especially given that this file is visible on GitHub.
+Go to the directory containing your server, and open the `index.js` file. This file contains all of the configuration information for your Parse Server. **Do not** make any changes to this file just yet.
+
+## 20.
+As you might have noticed, the MongoDB URI that you copied has a section `<dbuser>:<dbpassword>`, which you need to fill in with your the username and password of the user you added to your database. This is *sensitive information* and should be seen by nobody except you. Therefore, you *do not* want to leave it in your `index.js` file, especially given that this file is visible on GitHub.
 
 To solve this issue, we will set the URI as a 'config var' on Heroku. This will allow Heroku to add the URI to your index.js file when your server is first initialized. To give you an idea of how this works, take a look at the following line near the top of your `index.js` file:
 ```
@@ -119,13 +126,13 @@ To set the `DATABASE_URI` config var in Heroku, go to the command line on your c
 ```
 $ heroku config:set DATABASE_URI=your_mongodb_uri_with_username_and_password_replaced
 ```
-Be sure to replace the `<dbuser>:<dbpassword>` section of your MongoDB URI with your mLab username and password. To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
+Be sure to replace the `<dbuser>:<dbpassword>` section of the URI with the username and password of the *user you added to your database* (not your mLab account username and password). To confirm that you correctly set the `DATABASE_URI` config var, run the following command to list all of the config vars set for your heroku app:
 ```
 $ heroku config
 ```
 Nice work! Your server is now connected to your database.
 
-## 20.
+## 21.
 Go back to your `index.js` file. Take a look at this line and the lines directly below it:
 ```
 var api = new ParseServer ({
@@ -154,7 +161,7 @@ $ heroku config:set PARSE_MOUNT=/parse
 $ heroku config:set SERVER_URL=http://yourappname.herokuapp.com/parse
 ```
 
-## 21.
+## 22.
 Verify that all your config vars are set correctly:
 ```
 $ heroku config
@@ -169,8 +176,45 @@ PARSE_MOUNT
 SERVER_URL
 ```
 
-## 22.
-We're now ready to connect our server to Android.
+## 23.
+Test that your server setup is working by storing an object in your database. Paste the following at the command line, with **`myAppId` and `yourappname` replaced with your server's values**:
+```
+curl -X POST -H "X-Parse-Application-Id: myAppId" \
+-H "Content-Type: application/json" \
+-d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+https://yourappname.herokuapp.com/parse/classes/GameScore
+```
+This creates a new GameScore document and stores it in your database.
+
+You should get back something like this:
+```
+{"objectId":"JzfxQjhleB","createdAt":"2017-07-21T06:14:10.512Z"}
+```
+Indicating that the store was successful. If you go back to mLab in your browser and refresh your database page, under the `Collections` tab you should now see a collection called `GameScore`. Click on the collection to see its documents. You should see a document in JSON form that contains the same information as was included in the `curl` command above, as well as some additional fields: an ID, created-at time, and updated-at time. Nice work! You can now store documents in your server.
+
+If you got back something like this:
+```
+{"code":1,"message":"Internal server error."}
+```
+It means that your server was not configured correctly. You can get more information about the error from your server's logs with the following command:
+```
+$ heroku logs
+```
+A common error is failed MongoDB authentication. Check that the username and password for your database are exactly as you set them in [Step 17](#17.).
+
+## 24.
+Lastly, before moving on to Android, test that you can read data back from your server. Reading data requires the master key. Paste the following at the command line, with **`myAppId`, `abc` and `yourappname` replaced with your server's values**:
+```
+curl -X GET -H "X-Parse-Application-Id: myAppId" -H "X-Parse-Master-Key: abc"  \
+https://yourappname.herokuapp.com/parse/classes/GameScore
+```
+
+You should get back something like this:
+```
+{"results":[{"objectId":"JzfxQjhleB","score":1337,"playerName":"Sean Plott","cheatMode":false,"createdAt":"2017-07-21T06:14:10.512Z","updatedAt":"2017-07-21T06:14:10.512Z"}]}
+```
+
+Nice work! You've now verified that you can both store and retrieve data using your Parse Server's [RESTful API](http://searchcloudstorage.techtarget.com/definition/RESTful-API).
 
 # Sources
 Codepath: [Configuring a Parse Server](https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server)
