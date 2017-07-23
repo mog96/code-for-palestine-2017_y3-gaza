@@ -250,7 +250,7 @@ Now for integration with Android. Open your Android Studio project and add the f
 ```
 // For Parse Server.
 compile 'com.parse.bolts:bolts-android:1.4.0'
-compile 'com.parse:parse-android:1.15.1'
+compile 'com.parse:parse-android:1.15.8'
 compile 'com.squareup.okhttp3:logging-interceptor:3.6.0' // for logging API calls to LogCat
 ```
 Click 'Sync Now' when it appears.
