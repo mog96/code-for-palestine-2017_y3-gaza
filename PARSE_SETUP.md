@@ -1,6 +1,6 @@
 # Integrating Parse Server with Android
 
-The steps below will guide you through setting up a [Parse Server](https://github.com/parse-community/parse-server) hosted on [Heroku](https://www.heroku.com/) and backed with a MongoDB document store hosted by [mLab](https://mlab.com/).
+The steps below will guide you through setting up a [Parse Server](https://github.com/parse-community/parse-server) — hosted on [Heroku](https://www.heroku.com/) and backed with a MongoDB document store hosted by [mLab](https://mlab.com/) — and accessing to your Parse Server from an Android app.
 
 ## 1.
 Create a [Heroku](https://www.heroku.com/) account. You will be hosting your Parse Server on Heroku.
