@@ -108,7 +108,7 @@ Continue working on layout and button-triggered transitions between screens.
 ## Day 10
 Introduce example app: Kontax, a simple contacts app for Android that syncs with "the cloud."
 - [Kontax](https://github.com/mog96/kontax)
-- [kontax-server](https://github.com/mog96/kontax)
+- [kontax-server](https://github.com/mog96/kontax-server)
 
 Walk students through app-specific features by adding them to Kontax.
 
