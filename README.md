@@ -130,6 +130,9 @@ Walk through features requested by students:
   - Generating a PDF document using data stored in the DB
 - Adding an app icon
 
+## Day 11
+Continue working on [Day 10](#day-10) material.
+
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
 
