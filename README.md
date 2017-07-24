@@ -103,12 +103,32 @@ Follow this setup guide: [Integrating Parse Server with Android](https://github.
 ## Day 9
 Upload all groups' Android Studio projects to GitHub. Review pushing, pulling, merging to ensure that teammates feel comfortable working on their group's Android Studio project in parallel.
 
-Finish unpolished layout.
+Continue working on layout and button-triggered transitions between screens.
 
-Begin storing and retrieving data to and from Parse Server.
+## Day 10
+Introduce example app: Kontax, a simple contacts app for Android that syncs with "the cloud."
+- [Kontax](https://github.com/mog96/kontax)
+- [kontax-server](https://github.com/mog96/kontax)
+
+Walk students through app-specific features by adding them to Kontax.
 
 ### Exercise
-Walk through storing and retrieving data to and from Parse Server.
+Walk through features requested by students:
+- [Accessing the camera](https://developer.android.com/training/camera/photobasics.html) and a user's photos
+  - Sometimes requires [rotating an image](https://stackoverflow.com/a/14066265/) using the image's [EXIF orientation tag](http://sylvana.net/jpegcrop/exif_orientation.html)
+- Requesting a user's location
+- Presenting an alert dialog
+- Storing data in Parse Server
+- Querying an API and deserializing results
+  - Google
+  - Coursera
+  - Udacity
+- Integrating with Facebook
+  - Login
+  - Reading profile
+- Adding server-side functionality
+  - Generating a PDF document using data stored in the DB
+- Adding an app icon
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
