@@ -148,6 +148,9 @@ Walk through renaining features requested by students [Day 10](#day-10):
   - Generating a PDF document using data stored in the DB
 - Adding an app icon
 
+## Day 13
+Last day of class. Present final projects.
+
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
 
