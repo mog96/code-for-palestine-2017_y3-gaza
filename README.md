@@ -1,4 +1,5 @@
-# Code for Palestine 2017 — Year 3 Course, Gaza
+# Code for Palestine 2017 — Gaza
+# Year 3 Course: Android Development
 Curriculum for the [Code for Palestine](http://www.pgfapps.ps/codeforpalestine/) 2017 summer camp, Gaza branch, Year 3 course.
 
 Students have a background in web development using the Flask web server framework and experience creating web interfaces using HTML, CSS, and JavaScript.
@@ -7,6 +8,12 @@ This two-week course is a first exposure to Android development for students.
 
 # Curriculum Overview
 See [here](https://docs.google.com/presentation/d/1E2hq97nSFSaDG1SsOIY46O3nBSzaPpFMgRny_pWwCO8/edit?usp=sharing).
+
+Below is a record of material covered.
+
+*Example Android app* demonstrating material covered in the course:
+- [Kontax](https://github.com/mog96/kontax)
+- [kontax-server](https://github.com/mog96/kontax-server)
 
 # Calendar
 |          | S      | M      | T      | W      | Th     | F      | S      |
