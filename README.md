@@ -2,9 +2,9 @@
 # Year 3 Course: Android Development
 Curriculum for the [Code for Palestine](http://www.pgfapps.ps/codeforpalestine/) 2017 summer camp, Gaza branch, Year 3 course.
 
-Students have a background in web development using the Flask web server framework and experience creating web interfaces using HTML, CSS, and JavaScript.
+Students have experience developing websites using the [Flask](http://flask.pocoo.org/) server framework for the back end and HTML, CSS and JavaScript for the front end.
 
-This two-week course is a first exposure to Android development for students.
+This two-week course is a first exposure to [Android](https://www.android.com/) development for students.
 
 # Curriculum Overview
 See [here](https://docs.google.com/presentation/d/1E2hq97nSFSaDG1SsOIY46O3nBSzaPpFMgRny_pWwCO8/edit?usp=sharing).
@@ -27,10 +27,12 @@ Introduce technology stack:
   - Parse Server back end
   - Android front end
 
-Install Android Studio. (Could take a lifetime on the connection here.)
+Install [Android Studio](https://developer.android.com/studio/index.html). (Could take a lifetime on the connection here.)
 
 ## Day 2
-Introduce Java. Begin Android development ([Lesson 1](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson01-ScrollView-Demo)).
+Introduce Java.
+
+Begin [Android development](https://developer.android.com/index.html) ([Lesson 1](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson01-ScrollView-Demo)).
 
 ### Exercise
 Build a weather app that fetches data from an API, and displays it in a scrollable TextView ([Lesson 2](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson02-Weather-App-Using-ScrollView)).
