@@ -85,7 +85,7 @@ Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for
 ## Day 7
 Learn to use data binding to populate views with data.
 
-Begin work on students' final projects, starting with layout.
+*Begin work on final projects*, starting with layout.
 
 ### Exercise
 Complete the boarding pass app. Use data binding to populate flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
@@ -112,12 +112,12 @@ Introduce example app: Kontax, a simple contacts app for Android that syncs with
 
 Walk students through app-specific features by adding them to Kontax.
 
-### Exercise
+### Exercises
 Walk through features requested by students:
 - [Accessing the camera](https://developer.android.com/training/camera/photobasics.html) and a user's photos
   - Sometimes requires [rotating an image](https://stackoverflow.com/a/14066265/) using the image's [EXIF orientation tag](http://sylvana.net/jpegcrop/exif_orientation.html)
 - Requesting a user's location
-- Presenting an alert dialog
+- Presenting an [alert dialog](https://developer.android.com/guide/topics/ui/dialogs.html)
 - Storing data in Parse Server
 - Querying an API and deserializing results
   - Google
@@ -132,6 +132,21 @@ Walk through features requested by students:
 
 ## Day 11
 Continue working on [Day 10](#day-10) material.
+
+## Day 12
+*Last day to work on final projects.*
+
+Cover remaining app-specific features requested by students.
+
+### Exercises
+Walk through renaining features requested by students [Day 10](#day-10):
+- Requesting a user's location
+- Integrating with Facebook
+  - Login
+  - Reading profile
+- Adding server-side functionality
+  - Generating a PDF document using data stored in the DB
+- Adding an app icon
 
 # Sources
 Curriculum based on Udacity course #851: [Developing Android Apps](https://classroom.udacity.com/courses/ud851).
