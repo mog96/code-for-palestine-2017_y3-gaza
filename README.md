@@ -94,7 +94,7 @@ Finish layout of boarding pass app ([Lesson 5](https://github.com/mog96/code-for
 ## Day 7
 Learn to use data binding to populate views with data.
 
-*Begin work on final projects*, starting with layout.
+**Begin work on final projects**, starting with layout.
 
 ### Exercise
 Complete the boarding pass app. Use data binding to populate flight information ([Lesson 6](https://github.com/mog96/code-for-palestine-2017_y3-gaza/tree/master/Lessons/Lesson06-Boarding-Pass-App-With-Data-Binding)).
@@ -143,13 +143,17 @@ Walk through features requested by students:
 Continue working on [Day 10](#day-10) material.
 
 ## Day 12
-*Last day to work on final projects.*
+**Last day to work on final projects.**
 
 Cover remaining app-specific features requested by students.
+
+Give [closing presentation](https://docs.google.com/presentation/d/1mYz0G626Dl2Oqg7D-y4uf_j_wpyLv6apICHJPOU1f8U/edit?usp=sharing).
 
 ### Exercises
 Walk through renaining features requested by students [Day 10](#day-10):
 - Requesting a user's location
+  - Read these [strategies](https://developer.android.com/guide/topics/location/strategies.html) for the best approaches to capturing location
+  - Objective in [Kontax](https://github.com/mog96/kontax) is "Tagging user-created content with a location" in the New Contact Activity
 - Integrating with Facebook
   - Login
   - Reading profile
