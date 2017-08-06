@@ -154,7 +154,7 @@ var api = new ParseServer({
   }
 });
 ```
-You can here that a new `ParseServer` object is created, representing your server. It takes in the database URI that you set above, as well as several other fields that are each set using the same `process.env.CONFIG_VAR` that we used to set the `databaseUri` var in [Step 20](#20).
+You can see here that a new `ParseServer` object is created, representing your server. It takes in the database URI that you set above, as well as several other fields that are each set using the same `process.env.CONFIG_VAR` that we used to set the `databaseUri` var in [Step 20](#20).
 
 In order for your server to run correctly you will need to set the following config vars at minimum:
 - `APP_ID`
