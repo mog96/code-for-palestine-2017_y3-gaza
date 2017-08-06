@@ -43,7 +43,7 @@ $ git remote -v
 origin  https://github.com/parse-community/parse-server-example.git (fetch)
 origin  https://github.com/parse-community/parse-server-example.git (push)
 ```
-It currently points to the original `parse-server-example` repo.
+It currently points to the original `parse-server-example` repo. We need it to point to *your* repo that you created in [Step 6](#6).
 
 ## 10.
 Change the remote url to point to your GitHub repository:
