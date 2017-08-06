@@ -161,6 +161,7 @@ In order for your server to run correctly you will need to set the following con
 - `MASTER_KEY`
 - `PARSE_MOUNT`
 - `SERVER_URL`
+
 You can use the same `heroku config:set` command as in the previous step.
 
 The `APP_ID` and `MASTER_KEY` can be set to any combination of letters, numbers, and special characters that you like. Treat the `APP_ID` as a username, and the `MASTER_KEY` as a password.
